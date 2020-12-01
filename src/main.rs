@@ -152,7 +152,7 @@ impl OverlappingModel {
             weights.push(weight);
         }
 
-        println!("{:?}", weights);
+        // println!("{:?}", weights);
         // patterns
         //     .iter()
         //     .zip(&weights)
@@ -500,11 +500,11 @@ fn is_neighbor<I: GenericImageView>(p1: &I, p2: &I, dx: isize, dy: isize) -> boo
 }
 
 fn main() {
-    let img = image::open("./Skyline.png").unwrap();
+    let img = image::open("./dead look.png").unwrap();
 
     for tr in 0.. {
         let mut model =
-            OverlappingModel::new(&img, 2, 128, 128, false, false, Symmetries::Mirror, random());
+            OverlappingModel::new(&img, 3, 128, 128, false, false, Symmetries::None, random());
 
         let mut i = 0;
         let res = loop {
@@ -518,12 +518,12 @@ fn main() {
             model.propagate();
 
             // if i % 100 == 0 {
-            //     model.as_image().save(format!("output{}.png", i)).unwrap();
+                model.as_image().save(format!("./output/output{}.png", i)).unwrap();
             // }
             i += 1;
         };
 
-        model.as_image().save(format!("output{}.png", i)).unwrap();
+        model.as_image().save(format!("./output/output{}.png", i)).unwrap();
 
         println!(
             "Result: {}",
