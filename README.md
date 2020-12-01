@@ -10,4 +10,4 @@ Experimenting with the [WaveFunctionCollapse algorithm](https://github.com/mxgmn
 
 Current status: it works!
 
-I eventually want to be able to generate 3d voxel maps with this, and outputing minecraft maps or something like that.
+I eventually want to be able to generate 3d voxel maps with this, and output minecraft maps or something like that.
